@@ -140,33 +140,15 @@
     </style>
 </head>
 
-<!-- Carrega o SDK do EmailJS (versão mais recente) -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
-
-<!-- Inicializa o EmailJS com sua User ID (public key) -->
 <script>
-  emailjs.init('ZhtqLCwT209exfxYP'); // Substitua pela sua chave!
-</script>
-
-<script>  document.getElementById('form-contato').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita recarregar a página
-
-    const formData = new FormData(e.target);
-    formData.append('time', new Date().toLocaleString());
-
-    // Envia o e-mail
-    emailjs.sendForm(
-      'service_qclqx6x',   // ID do serviço (ex: "gmail")
-      'template_gboq5qe',  // ID do template
-      e.target            // Formulário HTML
-    ).then(
-      function() { alert('Mensagem enviada! 🐟'); },
-      function(error) { alert('Erro: ' + error); }
-    );
-  });
+  emailjs.init('ZhtqLCwT209exfxYP'); // 2️⃣ Inicializa com sua Public Key
 </script>
 
 <body>
+    
+    
+    
     <!-- HEADER -->
     <header>
         <h1>PEIXARIA GOLFINHO</h1>
@@ -224,7 +206,7 @@
         </div>
     </section>
 
-    <section id="contato">
+    <section id="form-contato">
         <h2>Fale Conosco</h2>
         <form id="emailForm">
           <input type="text" name="user_name" placeholder="Seu Nome" required>
@@ -233,6 +215,21 @@
           <button type="submit">Enviar Mensagem</button>
         </form>
       </section>
+
+      <script>
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+          e.preventDefault(); // 👈 Travou o recarregamento!
+          
+          emailjs.sendForm(
+            'service_qclqx6x',   // ID do serviço (ex: "gmail")
+            'template_gboq5qe',  // ID do template
+            e.target           // Formulário
+          ).then(
+            () => alert('E-mail enviado com sucesso! 🎉'),
+            (error) => alert('Erro: ' + JSON.stringify(error))
+          );
+        });
+      </script>
       
 
     <!-- FOOTER -->
