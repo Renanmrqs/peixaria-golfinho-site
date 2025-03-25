@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peixaria Golfinho - O Melhor Pescado da Cidade!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* RESET & GERAL */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #F8F9FA; 
+            color: #333;
+        }
+        
+        /* HEADER */
+        header {
+            background-color: #1E3A8A;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        
+        /* BANNER HERO */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1519708227418-c8fd9a8b9903?ixlib=rb-4.0.3');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .btn-primario {
+            background-color: #00B4D8;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-primario:hover {
+            background-color: #1E3A8A;
+        }
+        
+        /* PRODUTOS */
+        .produtos {
+            padding: 50px;
+            text-align: center;
+        }
+        .produtos h2 {
+            color: #1E3A8A;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            color: #1E3A8A;
+            margin-bottom: 10px;
+        }
+        .card .preco {
+            color: #00B4D8;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .btn-comprar {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* CONTATO */
+        .contato {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+        .contato h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .contato p {
+            margin: 10px 0;
+        }
+        .redes-sociais {
+            margin-top: 20px;
+        }
+        .redes-sociais a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<!-- Carrega o SDK do EmailJS (versão mais recente) -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+
+<!-- Inicializa o EmailJS com sua User ID (public key) -->
+<script>
+  emailjs.init('ZhtqLCwT209exfxYP'); // Substitua pela sua chave!
+</script>
+
+<script>  document.getElementById('form-contato').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita recarregar a página
+
+    const formData = new FormData(e.target);
+    formData.append('time', new Date().toLocaleString());
+
+    // Envia o e-mail
+    emailjs.sendForm(
+      'service_qclqx6x',   // ID do serviço (ex: "gmail")
+      'template_gboq5qe',  // ID do template
+      e.target            // Formulário HTML
+    ).then(
+      function() { alert('Mensagem enviada! 🐟'); },
+      function(error) { alert('Erro: ' + error); }
+    );
+  });
+</script>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>PEIXARIA GOLFINHO</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+    
+    <!-- BANNER HERO -->
+    <section class="hero" id="home">
+        <div>
+            <h2>O Pescado Mais Fresco da Cidade!</h2>
+            <button class="btn-primario">Peça Agora</button>
+        </div>
+    </section>
+    
+    <!-- PRODUTOS -->
+    <section class="produtos" id="produtos">
+        <h2>Nossos Produtos</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://images.squarespace-cdn.com/content/v1/5d88ca022c11de1fd1d94810/1611176619595-J6ZH74FNWZ4ICJCY98O5/Salmon+Fillet+with+Ice+and+Lime.jpg?format=1000w" alt="Salmão Fresco">
+                <h3>Salmão</h3>
+                <p class="preco">R$ 110,00/kg</p>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+            <div class="card">
+                <img src="https://litofish.pt/wp-content/uploads/2018/10/garoupa-600x400.jpg" alt="Garoupa">
+                <h3>Garoupa em postas</h3>
+                <p class="preco">R$ 85,00/kg</p>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+            <div class="card">
+                <img src="https://vivendadocamarao.vtexassets.com/arquivos/ids/157878/CAMARAO-DESCASCADO-EVISCERADO-PRE-COZIDO-41.50-%E2%80%93-4OOG.jpg?v=637822697124270000" alt="Camarão eviscerado">
+                <h3>Camarão eviscerado</h3>
+                <p class="preco">R$ 135,00/kg</p>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+        <h2>Contato</h2>
+        <p>Telefone: (48) 3262-8499</p>
+        <p>Endereço: Rua Manoel José Pereira, 129 - Palmas</p>
+        <p>Horário: 8h às 12h / 14h às 19h (seg a sex) 8h às 19 (sab) 8h às 12 (dom)</p>
+        
+        <div class="redes-sociais"> 
+            <a href="#">📱 Instagram</a>
+            <a href="#">📘 Facebook</a> 
+            <a href="#">📞 WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Fale Conosco</h2>
+        <form id="emailForm">
+          <input type="text" name="user_name" placeholder="Seu Nome" required>
+          <input type="email" name="user_email" placeholder="Seu E-mail" required>
+          <textarea name="user_message" placeholder="Sua Mensagem" required></textarea>
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </section>
+      
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Peixaria Golfinho. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
