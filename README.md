@@ -11,7 +11,9 @@ Funcionalidades: catálogo de produtos, formulário de contato e informações c
 - Hospedagem: GitHub Pages  
 - Ferramentas: GitHub Desktop, VS Code
 
-1. Acesse o site: 
+1. Acesse o site: https://github.com/Renanmrqs/peixaria-golfinho-site
 2. Para editar produtos:  
    - Modifique o arquivo `produtos.html` no GitHub.  
    - Commit alterações para atualizar o site.  
+
+Licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
