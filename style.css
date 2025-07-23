@@ -1,207 +1,494 @@
-  /* RESET & GERAL */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: #F8F9FA; 
-            color: #333;
-        }
-        
-        /* HEADER */
-        header {
-            background-color: #1E3A8A;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            color: white;
-            font-size: 2.5rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        
-        /* BANNER HERO */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1519708227418-c8fd9a8b9903?ixlib=rb-4.0.3');
-            background-size: cover;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        .btn-primario {
-            background-color: #00B4D8;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-primario:hover {
-            background-color: #1E3A8A;
-        }
-        
-        /* PRODUTOS */
-        .produtos {
-            padding: 50px;
-            text-align: center;
-        }
-        .produtos h2 {
-            color: #1E3A8A;
-            margin-bottom: 30px;
-            font-size: 2rem;
-        }
-        .card-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 10px;
-            width: 250px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-        .card h3 {
-            color: #1E3A8A;
-            margin-bottom: 10px;
-        }
-        .card .preco {
-            color: #00B4D8;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-        .btn-comprar {
-            background-color: #1E3A8A;
-            color: white;
-            padding: 8px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .btn-comprar:hover {
-            background-color: #00B4D8; /* Adiciona um hover aos botões comprar */
-        }
-        
-        /* CONTATO */
-        .contato {
-            background-color: #1E3A8A;
-            color: white;
-            padding: 50px;
-            text-align: center;
-        }
-        .contato h2 {
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-        .contato p {
-            margin: 10px 0;
-        }
-        .redes-sociais {
-            margin-top: 20px;
-            margin-bottom: 30px; /* Espaçamento antes do formulário */
-        }
-        .redes-sociais a {
-            color: white;
-            margin: 0 10px;
-            font-size: 1.5rem;
-            text-decoration: none; /* Garante que não tenha sublinhado */
-            display: inline-flex; /* Para alinhar ícone e texto */
-            align-items: center;
-            gap: 5px; /* Espaço entre o ícone e o texto */
-        }
-        /* Estilos do Formulário de Contato */
-        #form-contato {
-            background-color: #f0f0f0; /* Um cinza claro para destacar */
-            padding: 40px 20px;
-            text-align: center;
-        }
-        #form-contato h2 {
-            color: #1E3A8A;
-            margin-bottom: 30px;
-            font-size: 2rem;
-        }
-        #emailForm {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        #emailForm input[type="text"],
-        #emailForm input[type="email"],
-        #emailForm textarea {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        #emailForm textarea {
-            resize: vertical; /* Permite redimensionar verticalmente */
-            min-height: 100px;
-        }
-        #emailForm button[type="submit"] {
-            background-color: #00B4D8;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        #emailForm button[type="submit"]:hover {
-            background-color: #1E3A8A;
-        }
-        #emailForm button[type="submit"]:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
-        #feedback-message {
-            margin-top: 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        /* FOOTER */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        /* Responsividade Básica (exemplo) */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            .hero h2 {
-                font-size: 2rem;
-            }
-            .card-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .card {
-                width: 90%; /* Ocupa mais largura em telas pequenas */
-            }
-        }
+  /* --- Variáveis CSS: Cores e Fontes --- */
+/* É uma boa prática definir variáveis para cores e fontes.
+   Isso facilita a alteração em todo o site. */
+:root {
+    /* Cores (exemplo: tons de azul e cinza para remeter à água/peixe e profissionalismo) */
+    --cor-principal: #0056b3;     /* Azul escuro para o background do header */
+    --cor-secundaria: #007bff;    /* Azul um pouco mais claro para detalhes/hover */
+    --cor-texto-claro: #ffffff;   /* Branco para texto em fundos escuros */
+    --cor-texto-escuro: #333333;  /* Cinza escuro para texto principal */
+    --cor-fundo-claro: #f8f9fa;   /* Cinza muito claro para backgrounds gerais */
+}
+
+/* Importe suas fontes do Google Fonts aqui, por exemplo: */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* --- Estilos Gerais do Corpo (Body) --- */
+/* Reset básico e fontes padrão para o site */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif; /* Aplica a fonte do corpo definida */
+    color: var(--cor-texto-escuro);  /* Cor padrão do texto */
+    background-color: var(--cor-fundo-claro); /* Cor de fundo geral */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+}
+
+/* --- Estilos do Cabeçalho (Header) --- */
+header {
+    background-color: var(--cor-principal); /* Cor de fundo principal do header */
+    color: var(--cor-texto-claro);           /* Cor do texto no header */
+    padding: 1.2rem 1rem;                    /* Espaçamento interno (topo/base e laterais) */
+    display: flex;                           /* Usa Flexbox para alinhar elementos */
+    flex-direction: column;                  /* Coloca elementos em coluna por padrão */
+    align-items: center;                     /* Centraliza horizontalmente (quando em coluna) */
+    justify-content: space-between;          /* Distribui espaço entre os itens (quando em linha) */
+    flex-wrap: wrap;                         /* Permite quebra de linha em telas pequenas */
+}
+
+/* --- Título Principal (H1) no Header --- */
+header h1 {
+    font-family: var(--fonte-titulos); /* Aplica a fonte de títulos */
+    font-size: 2.2em;                  /* Tamanho da fonte */
+    margin: 0;                         /* Remove margem padrão do h1 */
+    text-transform: uppercase;         /* Transforma em maiúsculas */
+    letter-spacing: 2px;               /* Espaçamento entre as letras */
+    text-align: center;                /* Centraliza o texto */
+    padding-bottom: 0.8rem;            /* Espaço abaixo do título */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Linha divisória suave */
+    width: 100%;                       /* Ocupa a largura total para a linha */
+}
+
+/* --- Navegação (Nav) --- */
+nav {
+    margin-top: 1rem;                 /* Espaço acima da navegação */
+    width: 100%;                      /* Ocupa a largura total */
+    text-align: center;               /* Centraliza os links */
+}
+
+nav a {
+    color: var(--cor-texto-claro);     /* Cor dos links */
+    text-decoration: none;             /* Remove sublinhado padrão */
+    font-family: var(--fonte-corpo);   /* Fonte dos links */
+    font-weight: 600;                  /* Deixa o texto um pouco mais encorpado */
+    font-size: 1.1em;                  /* Tamanho da fonte dos links */
+    padding: 0.8rem 1.2rem;            /* Espaçamento interno dos links (para clique fácil) */
+    margin: 0 0.5rem;                  /* Espaçamento entre os links */
+    display: inline-block;             /* Permite aplicar padding e margin como bloco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave no hover */
+    border-radius: 5px;                /* Cantos levemente arredondados */
+}
+
+nav a:hover,
+nav a.active { /* Adicione a classe 'active' ao link da página atual com JavaScript, se quiser */
+    background-color: var(--cor-secundaria); /* Cor de fundo no hover */
+    color: var(--cor-texto-claro);             /* Cor do texto no hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* --- Responsividade do Header --- */
+@media (min-width: 768px) {
+    /* Em telas maiores, alinhe o H1 e a NAV lado a lado */
+    header {
+        flex-direction: row;        /* Coloca elementos em linha */
+        justify-content: space-between; /* Distribui espaço entre H1 e NAV */
+        align-items: center;        /* Centraliza verticalmente */
+        padding: 1.5rem 2rem;       /* Mais padding em telas maiores */
+    }
+
+    header h1 {
+        font-size: 2.8em;           /* Aumenta o tamanho do h1 */
+        border-bottom: none;        /* Remove a linha de baixo */
+        padding-bottom: 0;          /* Remove padding extra */
+        width: auto;                /* Volta à largura automática */
+    }
+
+    nav {
+        margin-top: 0;              /* Remove margem superior */
+        width: auto;                /* Volta à largura automática */
+        text-align: right;          /* Alinha links à direita */
+    }
+}
+
+/* --- Estilo para a imagem de fundo do Hero (exemplo) --- */
+/* Certifique-se de ter essa classe na sua seção hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-background.jpg') no-repeat center center/cover; /* Altere para o caminho da sua imagem */
+    height: 60vh; /* Altura da seção hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-texto-claro);
+    text-align: center;
+}
+
+.hero h2 {
+    font-family: var(--fonte-titulos);
+    font-size: 3em;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto para destaque */
+}
+
+.hero .btn-primario {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    padding: 1rem 2rem;
+    font-size: 1.2em;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero .btn-primario:hover {
+    background-color: #0069d9; /* Um tom um pouco mais escuro no hover */
+    transform: translateY(-2px); /* Efeito sutil de levantar */
+}
+
+/* --- Estilos para Seções Gerais --- */
+section {
+    padding: 4rem 1rem; /* Espaçamento interno para todas as seções */
+    max-width: 1200px;  /* Largura máxima para o conteúdo */
+    margin: 0 auto;     /* Centraliza a seção na página */
+}
+
+/* --- Estilos da Seção de Produtos --- */
+.produtos h2 {
+    font-family: var(--fonte-titulos);
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--cor-principal);
+    margin-bottom: 2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* Espaçamento entre os cards */
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    width: 300px; /* Largura fixa do card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o botão para baixo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" no hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    max-width: 100%;
+    height: 200px; /* Altura fixa para as imagens dos produtos */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-principal);
+    font-size: 1.8em;
+    margin-bottom: 0.5rem;
+}
+
+.card .preco {
+    font-size: 1.3em;
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.card .btn-comprar {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Empurra o botão para a parte inferior do card */
+}
+
+.card .btn-comprar:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* --- Estilos da Seção de Contato --- */
+.contato {
+    text-align: center;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 4rem 1rem;
+}
+
+.contato h2 {
+    font-family: var(--fonte-titulos);
+    font-size: 2.5em;
+    margin-bottom: 1.5rem;
+}
+
+.contato p {
+    font-size: 1.1em;
+    margin-bottom: 0.8rem;
+}
+
+.redes-sociais {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.redes-sociais a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--cor-texto-claro);
+    border-radius: 25px; /* Botões mais arredondados */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.redes-sociais a:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-3px);
+}
+
+/* --- Estilos do Formulário de Contato --- */
+#form-contato {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #f0f2f5; /* Um cinza mais claro para destacar */
+}
+
+#form-contato h2 {
+    font-family: var(--fonte-titulos);
+    font-size: 2.5em;
+    color: var(--cor-principal);
+    margin-bottom: 2rem;
+}
+
+#emailForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 1rem; /* Espaço entre os campos */
+}
+
+#emailForm input[type="text"],
+#emailForm input[type="email"],
+#emailForm textarea {
+    padding: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: var(--fonte-corpo);
+    background-color: white;
+}
+
+#emailForm textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+}
+
+#emailForm button[type="submit"] {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#emailForm button[type="submit"]:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-2px);
+}
+
+#feedback-message {
+    margin-top: 1rem;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* --- Estilos do Rodapé (Footer) --- */
+footer {
+    background-color: #333333; /* Cinza escuro */
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9em;
+    margin-top: 3rem; /* Espaço acima do rodapé */
+}
+
+/* --- Estilos da Seção Hero "Sobre Nós" --- */
+.hero-sobre {
+    background-color: var(--cor-secundaria);
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-sobre h1 {
+    font-family: var(--fonte-titulos);
+    font-size: 3em;
+    margin-bottom: 0.5rem;
+}
+
+.hero-sobre p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Estilos da Seção Conteúdo "Sobre Nós" --- */
+.conteudo-sobre {
+    display: flex; /* Usa Flexbox para alinhar lado a lado */
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: 2rem; /* Espaçamento entre os blocos de conteúdo */
+    max-width: 1200px;
+    margin: 0 auto 3rem auto; /* Centraliza e adiciona margem inferior */
+    padding: 0 1rem; /* Padding lateral */
+    align-items: flex-start; /* Alinha os itens no topo */
+}
+
+.texto-missao-visao {
+    flex: 2; /* O texto ocupa mais espaço */
+    min-width: 300px; /* Garante que não fique muito pequeno */
+}
+
+.conteudo-sobre h2 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-principal);
+    font-size: 2em;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.conteudo-sobre ul {
+    list-style: none; /* Remove bolinhas padrão */
+    padding-left: 0;
+}
+
+.conteudo-sobre ul li {
+    /* Ícone SVG customizado como bolinha - alterei a cor do ícone para a cor secundária */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%23007bff" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') no-repeat left center;
+    background-size: 20px 20px;
+    padding-left: 30px; /* Espaço para o ícone */
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.imagem-equipe {
+    flex: 1; /* A imagem ocupa menos espaço */
+    min-width: 250px; /* Garante um tamanho mínimo para a imagem */
+    text-align: center;
+}
+
+.imagem-equipe img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Cantos levemente arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.imagem-equipe .legenda {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* --- CTA (Call to Action) na Página Sobre Nós --- */
+.cta-contato {
+    background-color: var(--cor-principal); /* Alterado para a cor principal para consistência */
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+}
+
+.cta-contato h2 {
+    font-family: var(--fonte-titulos);
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+}
+
+.cta-contato p {
+    font-size: 1.1em;
+    margin-bottom: 2rem;
+}
+
+.botao-primario {
+    display: inline-block;
+    background-color: white;
+    color: var(--cor-principal); /* Alterado para a cor principal */
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botao-primario:hover {
+    background-color: var(--cor-fundo-claro); /* Um fundo mais claro no hover */
+    color: var(--cor-secundaria);
+}
+
+/* --- Media Queries para Responsividade Geral --- */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .produtos h2, #form-contato h2, .contato h2, .cta-contato h2, .hero-sobre h1 {
+        font-size: 2em;
+    }
+
+    .card {
+        width: calc(100% - 2rem); /* Ocupa quase 100% da largura em telas menores */
+    }
+
+    .conteudo-sobre {
+        flex-direction: column; /* Empilha os blocos em telas menores */
+        align-items: center; /* Centraliza os itens empilhados */
+    }
+
+    .texto-missao-visao, .imagem-equipe {
+        width: 100%; /* Ocupa a largura total */
+        min-width: unset; /* Remove o mínimo para flexibilidade */
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        padding: 0.6rem 0.8rem; /* Reduz padding dos links */
+        margin: 0 0.2rem;
+        font-size: 1em;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+
+    .hero .btn-primario {
+        font-size: 1em;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .redes-sociais a {
+        padding: 0.6rem 1rem;
+        font-size: 1em;
+    }
+}
