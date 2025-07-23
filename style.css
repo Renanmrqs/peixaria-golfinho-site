@@ -1,0 +1,207 @@
+  /* RESET & GERAL */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #F8F9FA; 
+            color: #333;
+        }
+        
+        /* HEADER */
+        header {
+            background-color: #1E3A8A;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        
+        /* BANNER HERO */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1519708227418-c8fd9a8b9903?ixlib=rb-4.0.3');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .btn-primario {
+            background-color: #00B4D8;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-primario:hover {
+            background-color: #1E3A8A;
+        }
+        
+        /* PRODUTOS */
+        .produtos {
+            padding: 50px;
+            text-align: center;
+        }
+        .produtos h2 {
+            color: #1E3A8A;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            color: #1E3A8A;
+            margin-bottom: 10px;
+        }
+        .card .preco {
+            color: #00B4D8;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .btn-comprar {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-comprar:hover {
+            background-color: #00B4D8; /* Adiciona um hover aos botões comprar */
+        }
+        
+        /* CONTATO */
+        .contato {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+        .contato h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .contato p {
+            margin: 10px 0;
+        }
+        .redes-sociais {
+            margin-top: 20px;
+            margin-bottom: 30px; /* Espaçamento antes do formulário */
+        }
+        .redes-sociais a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none; /* Garante que não tenha sublinhado */
+            display: inline-flex; /* Para alinhar ícone e texto */
+            align-items: center;
+            gap: 5px; /* Espaço entre o ícone e o texto */
+        }
+        /* Estilos do Formulário de Contato */
+        #form-contato {
+            background-color: #f0f0f0; /* Um cinza claro para destacar */
+            padding: 40px 20px;
+            text-align: center;
+        }
+        #form-contato h2 {
+            color: #1E3A8A;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        #emailForm {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #emailForm input[type="text"],
+        #emailForm input[type="email"],
+        #emailForm textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        #emailForm textarea {
+            resize: vertical; /* Permite redimensionar verticalmente */
+            min-height: 100px;
+        }
+        #emailForm button[type="submit"] {
+            background-color: #00B4D8;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #emailForm button[type="submit"]:hover {
+            background-color: #1E3A8A;
+        }
+        #emailForm button[type="submit"]:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #feedback-message {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        /* Responsividade Básica (exemplo) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90%; /* Ocupa mais largura em telas pequenas */
+            }
+        }
