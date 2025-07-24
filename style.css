@@ -223,9 +223,11 @@ section {
     font-size: 40px;
     transition: transform 0.3s ease, filter 0.3s ease;
     text-decoration: none;
-    color: var(--cor-texto-claro);
+    color: var(--cor-texto-claro); /* Mantém a cor clara/branca */
 }
 
+/* Removido as cores específicas para que fiquem brancas */
+/*
 .social-icons .fa-facebook-f,
 .social-icons .fa-facebook {
     color: #1877F2;
@@ -240,6 +242,7 @@ section {
 .social-icons .fa-whatsapp {
     color: #25D366;
 }
+*/
 
 .social-icons a:hover {
     transform: translateY(-5px) scale(1.1);
@@ -489,6 +492,8 @@ footer {
     border: 2px solid var(--cor-borda); /* Borda sutil usando sua variável */
     border-radius: 8px; /* Cantos arredondados para um visual mais suave */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar o mapa */
+    display: block; /* Garante que o iframe se comporte como bloco para margens automáticas */
+    margin: 0 auto; /* Centraliza o mapa horizontalmente */
 }
 
 /* Responsividade para o mapa em telas menores */
