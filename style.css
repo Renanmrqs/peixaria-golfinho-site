@@ -286,18 +286,23 @@ section {
    considere renomeá-la, por exemplo, para '.btn-generico-social'. */
 /*
 .redes-sociais {
-    margin-top: 2rem;
+    /* Aumenta o espaço acima das redes sociais */
+    margin-top: 4rem; /* Era 2rem, agora 4rem para mais espaço */
+    margin-bottom: 2rem; /* Adiciona um espaçamento abaixo também */
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    /* Aumenta o espaço entre os ícones das redes sociais */
+    gap: 2.5rem; /* Era 1.5rem, agora 2.5rem para mais distância */
     flex-wrap: wrap;
 }
 
 .redes-sociais a {
     color: var(--cor-texto-claro);
     text-decoration: none;
-    font-size: 1.2em;
-    padding: 0.8rem 1.5rem;
+    /* Aumenta o tamanho do texto dos links */
+    font-size: 1.5em; /* Era 1.2em, agora 1.5em para ficarem maiores */
+    /* Aumenta o preenchimento interno para que o "botão" seja maior */
+    padding: 1.2rem 2.2rem; /* Era 0.8rem 1.5rem, agora maior */
     border: 1px solid var(--cor-texto-claro);
     border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -307,7 +312,6 @@ section {
     background-color: var(--cor-secundaria);
     transform: translateY(-3px);
 }
-*/
 
 /* --- Estilos do Formulário de Contato --- */
 #form-contato {
