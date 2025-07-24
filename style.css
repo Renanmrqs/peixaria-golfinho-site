@@ -1,13 +1,18 @@
-  /* --- Variáveis CSS: Cores e Fontes --- */
+/* --- Variáveis CSS: Cores e Fontes --- */
 /* É uma boa prática definir variáveis para cores e fontes.
    Isso facilita a alteração em todo o site. */
 :root {
     /* Cores (exemplo: tons de azul e cinza para remeter à água/peixe e profissionalismo) */
-    --cor-principal: #0056b3;     /* Azul escuro para o background do header */
-    --cor-secundaria: #007bff;    /* Azul um pouco mais claro para detalhes/hover */
-    --cor-texto-claro: #ffffff;   /* Branco para texto em fundos escuros */
-    --cor-texto-escuro: #333333;  /* Cinza escuro para texto principal */
-    --cor-fundo-claro: #f8f9fa;   /* Cinza muito claro para backgrounds gerais */
+    --cor-principal: #0056b3;      /* Azul escuro para o background do header */
+    --cor-secundaria: #007bff;     /* Azul um pouco mais claro para detalhes/hover */
+    --cor-texto-claro: #ffffff;    /* Branco para texto em fundos escuros */
+    --cor-texto-escuro: #333333;   /* Cinza escuro para texto principal */
+    --cor-fundo-claro: #f8f9fa;    /* Cinza muito claro para backgrounds gerais */
+    --cor-borda: #ced4da;          /* Adicionado: Cor para bordas de inputs e outros elementos */
+
+    /* Fontes */
+    --fonte-titulos: 'Montserrat', sans-serif; /* Adicionado: Variável para a fonte dos títulos */
+    --fonte-corpo: 'Open Sans', sans-serif;    /* Adicionado: Variável para a fonte do corpo */
 }
 
 /* Importe suas fontes do Google Fonts aqui, por exemplo: */
@@ -18,8 +23,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif; /* Aplica a fonte do corpo definida */
-    color: var(--cor-texto-escuro);  /* Cor padrão do texto */
+    font-family: var(--fonte-corpo); /* Usando a variável de fonte do corpo */
+    color: var(--cor-texto-escuro);    /* Cor padrão do texto */
     background-color: var(--cor-fundo-claro); /* Cor de fundo geral */
     line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
 }
@@ -27,84 +32,83 @@ body {
 /* --- Estilos do Cabeçalho (Header) --- */
 header {
     background-color: var(--cor-principal); /* Cor de fundo principal do header */
-    color: var(--cor-texto-claro);           /* Cor do texto no header */
-    padding: 1.2rem 1rem;                    /* Espaçamento interno (topo/base e laterais) */
-    display: flex;                           /* Usa Flexbox para alinhar elementos */
-    flex-direction: column;                  /* Coloca elementos em coluna por padrão */
-    align-items: center;                     /* Centraliza horizontalmente (quando em coluna) */
-    justify-content: space-between;          /* Distribui espaço entre os itens (quando em linha) */
-    flex-wrap: wrap;                         /* Permite quebra de linha em telas pequenas */
+    color: var(--cor-texto-claro);          /* Cor do texto no header */
+    padding: 1.2rem 1rem;                   /* Espaçamento interno (topo/base e laterais) */
+    display: flex;                          /* Usa Flexbox para alinhar elementos */
+    flex-direction: column;                 /* Coloca elementos em coluna por padrão */
+    align-items: center;                    /* Centraliza horizontalmente (quando em coluna) */
+    justify-content: space-between;         /* Distribui espaço entre os itens (quando em linha) */
+    flex-wrap: wrap;                        /* Permite quebra de linha em telas pequenas */
 }
 
 /* --- Título Principal (H1) no Header --- */
 header h1 {
     font-family: var(--fonte-titulos); /* Aplica a fonte de títulos */
-    font-size: 2.2em;                  /* Tamanho da fonte */
-    margin: 0;                         /* Remove margem padrão do h1 */
-    text-transform: uppercase;         /* Transforma em maiúsculas */
-    letter-spacing: 2px;               /* Espaçamento entre as letras */
-    text-align: center;                /* Centraliza o texto */
-    padding-bottom: 0.8rem;            /* Espaço abaixo do título */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Linha divisória suave */
-    width: 100%;                       /* Ocupa a largura total para a linha */
+    font-size: 2.2em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
 }
 
 /* --- Navegação (Nav) --- */
 nav {
-    margin-top: 1rem;                 /* Espaço acima da navegação */
-    width: 100%;                      /* Ocupa a largura total */
-    text-align: center;               /* Centraliza os links */
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
 }
 
 nav a {
-    color: var(--cor-texto-claro);     /* Cor dos links */
-    text-decoration: none;             /* Remove sublinhado padrão */
-    font-family: var(--fonte-corpo);   /* Fonte dos links */
-    font-weight: 600;                  /* Deixa o texto um pouco mais encorpado */
-    font-size: 1.1em;                  /* Tamanho da fonte dos links */
-    padding: 0.8rem 1.2rem;            /* Espaçamento interno dos links (para clique fácil) */
-    margin: 0 0.5rem;                  /* Espaçamento entre os links */
-    display: inline-block;             /* Permite aplicar padding e margin como bloco */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave no hover */
-    border-radius: 5px;                /* Cantos levemente arredondados */
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-family: var(--fonte-corpo); /* Usando a variável de fonte do corpo */
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 0.8rem 1.2rem;
+    margin: 0 0.5rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
 
 nav a:hover,
-nav a.active { /* Adicione a classe 'active' ao link da página atual com JavaScript, se quiser */
-    background-color: var(--cor-secundaria); /* Cor de fundo no hover */
-    color: var(--cor-texto-claro);             /* Cor do texto no hover */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+nav a.active {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Responsividade do Header --- */
 @media (min-width: 768px) {
-    /* Em telas maiores, alinhe o H1 e a NAV lado a lado */
     header {
-        flex-direction: row;        /* Coloca elementos em linha */
-        justify-content: space-between; /* Distribui espaço entre H1 e NAV */
-        align-items: center;        /* Centraliza verticalmente */
-        padding: 1.5rem 2rem;       /* Mais padding em telas maiores */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
     }
 
     header h1 {
-        font-size: 2.8em;           /* Aumenta o tamanho do h1 */
-        border-bottom: none;        /* Remove a linha de baixo */
-        padding-bottom: 0;          /* Remove padding extra */
-        width: auto;                /* Volta à largura automática */
+        font-size: 2.8em;
+        border-bottom: none;
+        padding-bottom: 0;
+        width: auto;
     }
 
     nav {
-        margin-top: 0;              /* Remove margem superior */
-        width: auto;                /* Volta à largura automática */
-        text-align: right;          /* Alinha links à direita */
+        margin-top: 0;
+        width: auto;
+        text-align: right;
     }
 }
 
 /* --- Estilo para a imagem de fundo do Hero (exemplo) --- */
 /* Certifique-se de ter essa classe na sua seção hero */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-background.jpg') no-repeat center center/cover; /* Altere para o caminho da sua imagem */
-    height: 60vh; /* Altura da seção hero */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-background.jpg') no-repeat center center/cover;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,7 +120,7 @@ nav a.active { /* Adicione a classe 'active' ao link da página atual com JavaSc
     font-family: var(--fonte-titulos);
     font-size: 3em;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto para destaque */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero .btn-primario {
@@ -132,15 +136,15 @@ nav a.active { /* Adicione a classe 'active' ao link da página atual com JavaSc
 }
 
 .hero .btn-primario:hover {
-    background-color: #0069d9; /* Um tom um pouco mais escuro no hover */
-    transform: translateY(-2px); /* Efeito sutil de levantar */
+    background-color: #0069d9;
+    transform: translateY(-2px);
 }
 
 /* --- Estilos para Seções Gerais --- */
 section {
-    padding: 4rem 1rem; /* Espaçamento interno para todas as seções */
-    max-width: 1200px;  /* Largura máxima para o conteúdo */
-    margin: 0 auto;     /* Centraliza a seção na página */
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* --- Estilos da Seção de Produtos --- */
@@ -156,7 +160,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem; /* Espaçamento entre os cards */
+    gap: 2rem;
 }
 
 .card {
@@ -165,22 +169,22 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     text-align: center;
-    width: 300px; /* Largura fixa do card */
+    width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Empurra o botão para baixo */
+    justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Efeito de "levantar" no hover */
+    transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
     max-width: 100%;
-    height: 200px; /* Altura fixa para as imagens dos produtos */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    height: 200px;
+    object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1rem;
 }
@@ -208,7 +212,7 @@ section {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    margin-top: auto; /* Empurra o botão para a parte inferior do card */
+    margin-top: auto;
 }
 
 .card .btn-comprar:hover {
@@ -234,6 +238,53 @@ section {
     margin-bottom: 0.8rem;
 }
 
+/* --- Estilos para os Ícones de Redes Sociais (Font Awesome) --- */
+/* Esta é a classe principal para os seus ícones Font Awesome.
+   Certifique-se de envolver seus links <a> com os ícones dentro de um elemento com esta classe. */
+.social-icons {
+    display: flex; /* Para que os ícones fiquem um ao lado do outro */
+    justify-content: center; /* Centraliza os ícones na linha */
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-top: 2rem; /* Espaçamento acima do bloco de ícones */
+    padding: 20px 0; /* Espaçamento acima e abaixo dos ícones */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+.social-icons a {
+    font-size: 40px; /* Tamanho dos ícones, ajuste conforme preferir */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transição suave para efeitos */
+    text-decoration: none; /* Remove sublinhado se for link */
+    color: var(--cor-texto-claro); /* Cor padrão dos ícones, usando a variável de texto claro */
+}
+
+/* Cores específicas para cada rede social */
+/* Usamos filter: brightness() no hover para evitar problemas com gradientes no Instagram */
+.social-icons .fa-facebook-f, .social-icons .fa-facebook { /* Adicionado fa-facebook-f */
+    color: #1877F2; /* Cor oficial do Facebook */
+}
+
+.social-icons .fa-instagram {
+    /* Gradiente para o Instagram */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-icons .fa-whatsapp {
+    color: #25D366; /* Cor oficial do WhatsApp */
+}
+
+/* Efeito ao passar o mouse */
+.social-icons a:hover {
+    transform: translateY(-5px) scale(1.1); /* Sobe um pouco e aumenta levemente */
+    filter: brightness(1.2); /* Deixa a cor/gradiente mais clara ao passar o mouse */
+}
+
+/* --- OBSERVAÇÃO: A classe '.redes-sociais' original foi removida para evitar conflito.
+   Se você ainda precisa de um estilo de botão com bordas e texto para outras coisas,
+   considere renomeá-la, por exemplo, para '.btn-generico-social'. */
+/*
 .redes-sociais {
     margin-top: 2rem;
     display: flex;
@@ -248,7 +299,7 @@ section {
     font-size: 1.2em;
     padding: 0.8rem 1.5rem;
     border: 1px solid var(--cor-texto-claro);
-    border-radius: 25px; /* Botões mais arredondados */
+    border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -256,12 +307,13 @@ section {
     background-color: var(--cor-secundaria);
     transform: translateY(-3px);
 }
+*/
 
 /* --- Estilos do Formulário de Contato --- */
 #form-contato {
     text-align: center;
     padding: 4rem 1rem;
-    background-color: #f0f2f5; /* Um cinza mais claro para destacar */
+    background-color: #f0f2f5;
 }
 
 #form-contato h2 {
@@ -276,22 +328,22 @@ section {
     flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
-    gap: 1rem; /* Espaço entre os campos */
+    gap: 1rem;
 }
 
 #emailForm input[type="text"],
 #emailForm input[type="email"],
 #emailForm textarea {
     padding: 1rem;
-    border: 1px solid var(--cor-borda);
+    border: 1px solid var(--cor-borda); /* Usando a variável de borda */
     border-radius: 5px;
     font-size: 1em;
-    font-family: var(--fonte-corpo);
+    font-family: var(--fonte-corpo); /* Usando a variável de fonte do corpo */
     background-color: white;
 }
 
 #emailForm textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
+    resize: vertical;
     min-height: 120px;
 }
 
@@ -320,12 +372,12 @@ section {
 
 /* --- Estilos do Rodapé (Footer) --- */
 footer {
-    background-color: #333333; /* Cinza escuro */
+    background-color: #333333;
     color: var(--cor-texto-claro);
     text-align: center;
     padding: 1.5rem 0;
     font-size: 0.9em;
-    margin-top: 3rem; /* Espaço acima do rodapé */
+    margin-top: 3rem;
 }
 
 /* --- Estilos da Seção Hero "Sobre Nós" --- */
@@ -351,18 +403,18 @@ footer {
 
 /* --- Estilos da Seção Conteúdo "Sobre Nós" --- */
 .conteudo-sobre {
-    display: flex; /* Usa Flexbox para alinhar lado a lado */
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
-    gap: 2rem; /* Espaçamento entre os blocos de conteúdo */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto 3rem auto; /* Centraliza e adiciona margem inferior */
-    padding: 0 1rem; /* Padding lateral */
-    align-items: flex-start; /* Alinha os itens no topo */
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
+    align-items: flex-start;
 }
 
 .texto-missao-visao {
-    flex: 2; /* O texto ocupa mais espaço */
-    min-width: 300px; /* Garante que não fique muito pequeno */
+    flex: 2;
+    min-width: 300px;
 }
 
 .conteudo-sobre h2 {
@@ -374,30 +426,29 @@ footer {
 }
 
 .conteudo-sobre ul {
-    list-style: none; /* Remove bolinhas padrão */
+    list-style: none;
     padding-left: 0;
 }
 
 .conteudo-sobre ul li {
-    /* Ícone SVG customizado como bolinha - alterei a cor do ícone para a cor secundária */
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%23007bff" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') no-repeat left center;
     background-size: 20px 20px;
-    padding-left: 30px; /* Espaço para o ícone */
+    padding-left: 30px;
     margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
 .imagem-equipe {
-    flex: 1; /* A imagem ocupa menos espaço */
-    min-width: 250px; /* Garante um tamanho mínimo para a imagem */
+    flex: 1;
+    min-width: 250px;
     text-align: center;
 }
 
 .imagem-equipe img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Cantos levemente arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .imagem-equipe .legenda {
@@ -408,7 +459,7 @@ footer {
 
 /* --- CTA (Call to Action) na Página Sobre Nós --- */
 .cta-contato {
-    background-color: var(--cor-principal); /* Alterado para a cor principal para consistência */
+    background-color: var(--cor-principal);
     color: white;
     text-align: center;
     padding: 3rem 1rem;
@@ -429,7 +480,7 @@ footer {
 .botao-primario {
     display: inline-block;
     background-color: white;
-    color: var(--cor-principal); /* Alterado para a cor principal */
+    color: var(--cor-principal);
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 5px;
@@ -438,7 +489,7 @@ footer {
 }
 
 .botao-primario:hover {
-    background-color: var(--cor-fundo-claro); /* Um fundo mais claro no hover */
+    background-color: var(--cor-fundo-claro);
     color: var(--cor-secundaria);
 }
 
@@ -453,23 +504,23 @@ footer {
     }
 
     .card {
-        width: calc(100% - 2rem); /* Ocupa quase 100% da largura em telas menores */
+        width: calc(100% - 2rem);
     }
 
     .conteudo-sobre {
-        flex-direction: column; /* Empilha os blocos em telas menores */
-        align-items: center; /* Centraliza os itens empilhados */
+        flex-direction: column;
+        align-items: center;
     }
 
     .texto-missao-visao, .imagem-equipe {
-        width: 100%; /* Ocupa a largura total */
-        min-width: unset; /* Remove o mínimo para flexibilidade */
+        width: 100%;
+        min-width: unset;
     }
 }
 
 @media (max-width: 480px) {
     nav a {
-        padding: 0.6rem 0.8rem; /* Reduz padding dos links */
+        padding: 0.6rem 0.8rem;
         margin: 0 0.2rem;
         font-size: 1em;
     }
@@ -487,8 +538,9 @@ footer {
         padding: 1rem;
     }
 
-    .redes-sociais a {
-        padding: 0.6rem 1rem;
-        font-size: 1em;
+    /* Ajuste para ícones sociais em telas menores, se necessário */
+    .social-icons a {
+        font-size: 30px; /* Reduz o tamanho dos ícones um pouco */
+        gap: 15px;
     }
 }
