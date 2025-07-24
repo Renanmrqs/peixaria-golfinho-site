@@ -1,49 +1,43 @@
 /* --- Variáveis CSS: Cores e Fontes --- */
-/* É uma boa prática definir variáveis para cores e fontes.
-   Isso facilita a alteração em todo o site. */
 :root {
-    /* Cores (exemplo: tons de azul e cinza para remeter à água/peixe e profissionalismo) */
-    --cor-principal: #0056b3;      /* Azul escuro para o background do header */
-    --cor-secundaria: #007bff;     /* Azul um pouco mais claro para detalhes/hover */
-    --cor-texto-claro: #ffffff;    /* Branco para texto em fundos escuros */
-    --cor-texto-escuro: #333333;   /* Cinza escuro para texto principal */
-    --cor-fundo-claro: #f8f9fa;    /* Cinza muito claro para backgrounds gerais */
-    --cor-borda: #ced4da;          /* Adicionado: Cor para bordas de inputs e outros elementos */
+    --cor-principal: #0056b3;
+    --cor-secundaria: #007bff;
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #333333;
+    --cor-fundo-claro: #f8f9fa;
+    --cor-borda: #ced4da;
 
-    /* Fontes */
-    --fonte-titulos: 'Montserrat', sans-serif; /* Adicionado: Variável para a fonte dos títulos */
-    --fonte-corpo: 'Open Sans', sans-serif;    /* Adicionado: Variável para a fonte do corpo */
+    --fonte-titulos: 'Montserrat', sans-serif;
+    --fonte-corpo: 'Open Sans', sans-serif;
 }
 
-/* Importe suas fontes do Google Fonts aqui, por exemplo: */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
 
 /* --- Estilos Gerais do Corpo (Body) --- */
-/* Reset básico e fontes padrão para o site */
 body {
     margin: 0;
     padding: 0;
-    font-family: var(--fonte-corpo); /* Usando a variável de fonte do corpo */
-    color: var(--cor-texto-escuro);    /* Cor padrão do texto */
-    background-color: var(--cor-fundo-claro); /* Cor de fundo geral */
-    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
+    line-height: 1.6;
 }
 
 /* --- Estilos do Cabeçalho (Header) --- */
 header {
-    background-color: var(--cor-principal); /* Cor de fundo principal do header */
-    color: var(--cor-texto-claro);          /* Cor do texto no header */
-    padding: 1.2rem 1rem;                   /* Espaçamento interno (topo/base e laterais) */
-    display: flex;                          /* Usa Flexbox para alinhar elementos */
-    flex-direction: column;                 /* Coloca elementos em coluna por padrão */
-    align-items: center;                    /* Centraliza horizontalmente (quando em coluna) */
-    justify-content: space-between;         /* Distribui espaço entre os itens (quando em linha) */
-    flex-wrap: wrap;                        /* Permite quebra de linha em telas pequenas */
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* --- Título Principal (H1) no Header --- */
 header h1 {
-    font-family: var(--fonte-titulos); /* Aplica a fonte de títulos */
+    font-family: var(--fonte-titulos);
     font-size: 2.2em;
     margin: 0;
     text-transform: uppercase;
@@ -64,7 +58,7 @@ nav {
 nav a {
     color: var(--cor-texto-claro);
     text-decoration: none;
-    font-family: var(--fonte-corpo); /* Usando a variável de fonte do corpo */
+    font-family: var(--fonte-corpo);
     font-weight: 600;
     font-size: 1.1em;
     padding: 0.8rem 1.2rem;
@@ -81,33 +75,9 @@ nav a.active {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Responsividade do Header --- */
-@media (min-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem 2rem;
-    }
-
-    header h1 {
-        font-size: 2.8em;
-        border-bottom: none;
-        padding-bottom: 0;
-        width: auto;
-    }
-
-    nav {
-        margin-top: 0;
-        width: auto;
-        text-align: right;
-    }
-}
-
 /* --- Estilo para a imagem de fundo do Hero (exemplo) --- */
-/* Certifique-se de ter essa classe na sua seção hero */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-background.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero-background.jpg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
     justify-content: center;
@@ -239,78 +209,41 @@ section {
 }
 
 /* --- Estilos para os Ícones de Redes Sociais (Font Awesome) --- */
-/* Esta é a classe principal para os seus ícones Font Awesome.
-   Certifique-se de envolver seus links <a> com os ícones dentro de um elemento com esta classe. */
 .social-icons {
-    display: flex; /* Para que os ícones fiquem um ao lado do outro */
-    justify-content: center; /* Centraliza os ícones na linha */
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 20px; /* Espaçamento entre os ícones */
-    margin-top: 2rem; /* Espaçamento acima do bloco de ícones */
-    padding: 20px 0; /* Espaçamento acima e abaixo dos ícones */
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    gap: 20px;
+    margin-top: 2rem;
+    padding: 20px 0;
+    flex-wrap: wrap;
 }
 
 .social-icons a {
-    font-size: 40px; /* Tamanho dos ícones, ajuste conforme preferir */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Transição suave para efeitos */
-    text-decoration: none; /* Remove sublinhado se for link */
-    color: var(--cor-texto-claro); /* Cor padrão dos ícones, usando a variável de texto claro */
+    font-size: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    text-decoration: none;
+    color: var(--cor-texto-claro);
 }
 
-/* Cores específicas para cada rede social */
-/* Usamos filter: brightness() no hover para evitar problemas com gradientes no Instagram */
-.social-icons .fa-facebook-f, .social-icons .fa-facebook { /* Adicionado fa-facebook-f */
-    color: #1877F2; /* Cor oficial do Facebook */
+.social-icons .fa-facebook-f,
+.social-icons .fa-facebook {
+    color: #1877F2;
 }
 
 .social-icons .fa-instagram {
-    /* Gradiente para o Instagram */
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .social-icons .fa-whatsapp {
-    color: #25D366; /* Cor oficial do WhatsApp */
+    color: #25D366;
 }
 
-/* Efeito ao passar o mouse */
 .social-icons a:hover {
-    transform: translateY(-5px) scale(1.1); /* Sobe um pouco e aumenta levemente */
-    filter: brightness(1.2); /* Deixa a cor/gradiente mais clara ao passar o mouse */
-}
-
-/* --- OBSERVAÇÃO: A classe '.redes-sociais' original foi removida para evitar conflito.
-   Se você ainda precisa de um estilo de botão com bordas e texto para outras coisas,
-   considere renomeá-la, por exemplo, para '.btn-generico-social'. */
-/*
-.redes-sociais {
-    /* Aumenta o espaço acima das redes sociais */
-    margin-top: 4rem; /* Era 2rem, agora 4rem para mais espaço */
-    margin-bottom: 2rem; /* Adiciona um espaçamento abaixo também */
-    display: flex;
-    justify-content: center;
-    /* Aumenta o espaço entre os ícones das redes sociais */
-    gap: 2.5rem; /* Era 1.5rem, agora 2.5rem para mais distância */
-    flex-wrap: wrap;
-}
-
-.redes-sociais a {
-    color: var(--cor-texto-claro);
-    text-decoration: none;
-    /* Aumenta o tamanho do texto dos links */
-    font-size: 1.5em; /* Era 1.2em, agora 1.5em para ficarem maiores */
-    /* Aumenta o preenchimento interno para que o "botão" seja maior */
-    padding: 1.2rem 2.2rem; /* Era 0.8rem 1.5rem, agora maior */
-    border: 1px solid var(--cor-texto-claro);
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.redes-sociais a:hover {
-    background-color: var(--cor-secundaria);
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.1);
+    filter: brightness(1.2);
 }
 
 /* --- Estilos do Formulário de Contato --- */
@@ -339,10 +272,10 @@ section {
 #emailForm input[type="email"],
 #emailForm textarea {
     padding: 1rem;
-    border: 1px solid var(--cor-borda); /* Usando a variável de borda */
+    border: 1px solid var(--cor-borda);
     border-radius: 5px;
     font-size: 1em;
-    font-family: var(--fonte-corpo); /* Usando a variável de fonte do corpo */
+    font-family: var(--fonte-corpo);
     background-color: white;
 }
 
@@ -497,54 +430,76 @@ footer {
     color: var(--cor-secundaria);
 }
 
-/* --- Media Queries para Responsividade Geral --- */
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2.5em;
+---
+
+## **Responsividade Aprimorada**
+
+### **Para Telas Maiores que 768px**
+
+```css
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
     }
 
-    .produtos h2, #form-contato h2, .contato h2, .cta-contato h2, .hero-sobre h1 {
-        font-size: 2em;
+    header h1 {
+        font-size: 2.8em;
+        border-bottom: none;
+        padding-bottom: 0;
+        width: auto;
+    }
+
+    nav {
+        margin-top: 0;
+        width: auto;
+        text-align: right;
     }
 
     .card {
-        width: calc(100% - 2rem);
+        width: calc(33.333% - 2rem); /* 3 cards por linha em telas maiores */
     }
+}
 
-    .conteudo-sobre {
-        flex-direction: column;
-        align-items: center;
-    }
+/* --- Estilos da Seção de Localização --- */
+.localizacao {
+    text-align: center; /* Centraliza o conteúdo, incluindo o mapa */
+    padding: 4rem 1rem; /* Espaçamento interno, igual às outras seções */
+    background-color: var(--cor-fundo-claro); /* Fundo claro para contrastar com o header/footer */
+    color: var(--cor-texto-escuro); /* Cor de texto padrão */
+}
 
-    .texto-missao-visao, .imagem-equipe {
-        width: 100%;
-        min-width: unset;
+.localizacao h2 {
+    font-family: var(--fonte-titulos);
+    font-size: 2.5em;
+    color: var(--cor-principal); /* Título em azul principal */
+    margin-bottom: 2rem;
+}
+
+.localizacao p {
+    margin-bottom: 2rem; /* Espaçamento abaixo do parágrafo, se houver texto */
+    font-size: 1.1em;
+}
+
+.localizacao iframe {
+    max-width: 100%; /* Garante que o mapa não ultrapasse a largura da tela */
+    height: 450px; /* Mantém a altura padrão, mas pode ser ajustada */
+    border: 2px solid var(--cor-borda); /* Borda sutil usando sua variável */
+    border-radius: 8px; /* Cantos arredondados para um visual mais suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar o mapa */
+}
+
+/* Responsividade para o mapa em telas menores */
+@media (max-width: 768px) {
+    .localizacao iframe {
+        height: 300px; /* Reduz a altura do mapa em telas menores */
     }
 }
 
 @media (max-width: 480px) {
-    nav a {
-        padding: 0.6rem 0.8rem;
-        margin: 0 0.2rem;
-        font-size: 1em;
-    }
-
-    .hero h2 {
-        font-size: 1.8em;
-    }
-
-    .hero .btn-primario {
-        font-size: 1em;
-        padding: 0.8rem 1.5rem;
-    }
-
-    .card {
-        padding: 1rem;
-    }
-
-    /* Ajuste para ícones sociais em telas menores, se necessário */
-    .social-icons a {
-        font-size: 30px; /* Reduz o tamanho dos ícones um pouco */
-        gap: 15px;
+    .localizacao iframe {
+        height: 250px; /* Reduz ainda mais a altura em telas muito pequenas */
     }
 }
