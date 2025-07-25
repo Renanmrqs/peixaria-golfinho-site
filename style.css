@@ -227,7 +227,7 @@ section {
 }
 
 /* Removido as cores específicas para que fiquem brancas */
-/*
+
 .social-icons .fa-facebook-f,
 .social-icons .fa-facebook {
     color: #1877F2;
@@ -242,7 +242,7 @@ section {
 .social-icons .fa-whatsapp {
     color: #25D366;
 }
-*/
+
 
 .social-icons a:hover {
     transform: translateY(-5px) scale(1.1);
@@ -466,45 +466,46 @@ footer {
     }
 }
 
-/* --- Estilos da Seção de Localização --- */
-.localizacao {
-    text-align: center; /* Centraliza o conteúdo, incluindo o mapa */
-    padding: 4rem 1rem; /* Espaçamento interno, igual às outras seções */
-    background-color: var(--cor-fundo-claro); /* Fundo claro para contrastar com o header/footer */
-    color: var(--cor-texto-escuro); /* Cor de texto padrão */
+/* estilos da localizacao */
+
+#localizacao {
+    text-align: center; 
+    padding: 4cm 1cm; 
+    background-color: var(--cor-fundo-claro); 
+    color: var(--cor-texto-escuro); 
 }
 
-.localizacao h2 {
+#localizacao h2 {
     font-family: var(--fonte-titulos);
     font-size: 2.5em;
-    color: var(--cor-principal); /* Título em azul principal */
+    color: var(--cor-principal); 
     margin-bottom: 2rem;
 }
 
-.localizacao p {
-    margin-bottom: 2rem; /* Espaçamento abaixo do parágrafo, se houver texto */
+#localizacao p {
+    margin-bottom: 2rem; 
     font-size: 1.1em;
 }
 
-.localizacao iframe {
-    max-width: 100%; /* Garante que o mapa não ultrapasse a largura da tela */
-    height: 450px; /* Mantém a altura padrão, mas pode ser ajustada */
-    border: 2px solid var(--cor-borda); /* Borda sutil usando sua variável */
-    border-radius: 8px; /* Cantos arredondados para um visual mais suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar o mapa */
+#localizacao iframe { /* AGORA SIM, ESTE BLOCO ESTILIZA O IFRAME DENTRO DA SEÇÃO */
+    max-width: 100%; 
+    height: 450px; 
+    border: 2px solid var(--cor-borda); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     display: block; /* Garante que o iframe se comporte como bloco para margens automáticas */
     margin: 0 auto; /* Centraliza o mapa horizontalmente */
 }
 
 /* Responsividade para o mapa em telas menores */
 @media (max-width: 768px) {
-    .localizacao iframe {
-        height: 300px; /* Reduz a altura do mapa em telas menores */
+    #localizacao iframe {
+        height: 250px; /* Reduz a altura do mapa em telas menores */
     }
 }
 
 @media (max-width: 480px) {
-    .localizacao iframe {
+    #localizacao iframe {
         height: 250px; /* Reduz ainda mais a altura em telas muito pequenas */
     }
 }
