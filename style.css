@@ -213,14 +213,14 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     margin-top: 2rem;
-    padding: 20px 0;
+    padding: 40px 0;
     flex-wrap: wrap;
 }
 
 .social-icons a {
-    font-size: 40px;
+    font-size: 50px;
     transition: transform 0.3s ease, filter 0.3s ease;
     text-decoration: none;
     color: var(--cor-texto-claro); /* Mantém a cor clara/branca */
@@ -438,19 +438,14 @@ footer {
     text-align: center; 
     padding: 4rem 1rem; 
     background-color: var(--cor-fundo-claro); 
-    color: var(--cor-texto-escuro); 
+    color: var(--cor-texto-claro); 
 }
 
 #localizacao h2 {
     font-family: var(--fonte-titulos);
     font-size: 2.5em;
-    color: var(--cor-principal); 
+    color: var(--cor-texto-claro); 
     margin-bottom: 2rem;
-}
-
-#localizacao p {
-    margin-bottom: 2rem; 
-    font-size: 1.1em;
 }
 
 #localizacao iframe {
