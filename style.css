@@ -29,7 +29,7 @@ header {
     color: var(--cor-texto-claro);
     padding: 1.2rem 1rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Padrão mobile-first: coluna para telas pequenas */
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -139,7 +139,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     text-align: center;
-    width: 300px;
+    width: 300px; /* Largura padrão para mobile ou telas menores */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -226,8 +226,7 @@ section {
     color: var(--cor-texto-claro); /* Mantém a cor clara/branca */
 }
 
-/* Removido as cores específicas para que fiquem brancas */
-
+/* As cores específicas para os ícones devem vir depois, ou no próprio HTML */
 .social-icons .fa-facebook-f,
 .social-icons .fa-facebook {
     color: #1877F2;
@@ -242,7 +241,6 @@ section {
 .social-icons .fa-whatsapp {
     color: #25D366;
 }
-
 
 .social-icons a:hover {
     transform: translateY(-5px) scale(1.1);
@@ -435,14 +433,44 @@ footer {
 
 ---
 
-## **Responsividade Aprimorada**
+/* --- Estilos da Seção de Localização (PADRÃO PARA TODAS AS TELAS) --- */
+#localizacao {
+    text-align: center; 
+    padding: 4rem 1rem; 
+    background-color: var(--cor-fundo-claro); 
+    color: var(--cor-texto-escuro); 
+}
 
-### **Para Telas Maiores que 768px**
+#localizacao h2 {
+    font-family: var(--fonte-titulos);
+    font-size: 2.5em;
+    color: var(--cor-principal); 
+    margin-bottom: 2rem;
+}
 
-```css
+#localizacao p {
+    margin-bottom: 2rem; 
+    font-size: 1.1em;
+}
+
+#localizacao iframe {
+    width: 100%; 
+    height: 450px; /* Altura padrão para telas maiores */
+    border: 2px solid var(--cor-borda); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: block; 
+    margin: 0 auto; 
+}
+
+---
+
+### **Responsividade Aprimorada (Media Queries)**
+
+/* --- Para Telas Maiores que 768px (Desktop/Tablet maior) --- */
 @media (min-width: 768px) {
     header {
-        flex-direction: row;
+        flex-direction: row; /* Volta para linha em telas maiores */
         justify-content: space-between;
         align-items: center;
         padding: 1.5rem 2rem;
@@ -466,46 +494,15 @@ footer {
     }
 }
 
-/* estilos da localizacao */
-
-#localizacao {
-    text-align: center; 
-    padding: 4cm 1cm; 
-    background-color: var(--cor-fundo-claro); 
-    color: var(--cor-texto-escuro); 
-}
-
-#localizacao h2 {
-    font-family: var(--fonte-titulos);
-    font-size: 2.5em;
-    color: var(--cor-principal); 
-    margin-bottom: 2rem;
-}
-
-#localizacao p {
-    margin-bottom: 2rem; 
-    font-size: 1.1em;
-}
-
-#localizacao iframe { /* AGORA SIM, ESTE BLOCO ESTILIZA O IFRAME DENTRO DA SEÇÃO */
-    max-width: 100%; 
-    height: 450px; 
-    border: 2px solid var(--cor-borda); 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    display: block; /* Garante que o iframe se comporte como bloco para margens automáticas */
-    margin: 0 auto; /* Centraliza o mapa horizontalmente */
-}
-
-/* Responsividade para o mapa em telas menores */
+/* --- Responsividade para o mapa em telas menores (TABLET E MOBILE) --- */
 @media (max-width: 768px) {
     #localizacao iframe {
-        height: 250px; /* Reduz a altura do mapa em telas menores */
+        height: 300px; /* Reduz a altura do mapa em telas de tablet/mobile */
     }
 }
 
 @media (max-width: 480px) {
     #localizacao iframe {
-        height: 250px; /* Reduz ainda mais a altura em telas muito pequenas */
+        height: 200px; /* Reduz ainda mais a altura em telas de mobile pequenas */
     }
 }
