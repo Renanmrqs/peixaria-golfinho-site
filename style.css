@@ -77,7 +77,7 @@ nav a.active {
 
 /* --- Estilo para a imagem de fundo do Hero (exemplo) --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero-background.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/peixaria.jpeg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
     justify-content: center;
@@ -117,76 +117,94 @@ section {
     margin: 0 auto;
 }
 
-/* --- Estilos da Seção de Produtos --- */
+/* --- SEÇÃO NOSSOS PRODUTOS (Atualizada para 6 cards e design) --- */
+.produtos {
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: var(--cor-fundo-claro); /* Fundo claro para a seção */
+    color: var(--cor-texto-escuro);
+}
+
 .produtos h2 {
     font-family: var(--fonte-titulos);
-    text-align: center;
-    font-size: 2.5em;
+    font-size: 2.8em; /* Aumenta um pouco o título */
     color: var(--cor-principal);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* Mais espaço abaixo do título */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra sutil no título */
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+.produtos-grid {
+    display: grid;
+    /* Por padrão, 3 colunas, cada uma ocupando o mesmo espaço disponível */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 2rem; /* Espaçamento entre os cards */
+    max-width: 1200px; /* Limita a largura máxima da grade */
+    margin: 0 auto; /* Centraliza a grade na página */
+    padding: 0 1rem; /* Um pouco de padding nas laterais */
 }
 
-.card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    text-align: center;
-    width: 300px; /* Largura padrão para mobile ou telas menores */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.produto-card {
+    background-color: white; /* Fundo branco para o card */
+    border-radius: 12px; /* Cantos mais arredondados */
+    padding: 1.5rem; /* Espaçamento interno */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave e evidente */
+    display: flex; /* Para centralizar conteúdo verticalmente */
+    flex-direction: column; /* Conteúdo em coluna */
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
+    overflow: hidden; /* Garante que a imagem com border-radius não "vaze" */
+    text-align: center; /* Centraliza o texto dentro do card */
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.produto-card:hover {
+    transform: translateY(-8px); /* Levanta o card sutilmente no hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
 }
 
-.card img {
-    max-width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+.produto-card img {
+    max-width: 100%; /* Garante que a imagem se ajuste ao card */
+    height: 180px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Recorta a imagem para preencher o espaço sem distorcer */
+    border-radius: 8px; /* Cantos arredondados para a imagem */
+    margin-bottom: 1.2rem; /* Espaço abaixo da imagem */
+    border: 1px solid var(--cor-borda); /* Borda fina na imagem */
 }
 
-.card h3 {
+.produto-card h3 {
     font-family: var(--fonte-titulos);
+    font-size: 1.8em; /* Tamanho do título do produto */
     color: var(--cor-principal);
-    font-size: 1.8em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
-.card .preco {
-    font-size: 1.3em;
-    color: var(--cor-secundaria);
-    font-weight: 700;
-    margin-bottom: 1rem;
+.produto-card p {
+    font-size: 1.2em; /* Tamanho do preço */
+    color: var(--cor-texto-escuro); /* Cor do preço */
+    font-weight: bold; /* Preço em negrito */
+    margin-bottom: 0; /* Remove margem inferior para apresentação pura */
 }
 
-.card .btn-comprar {
-    background-color: var(--cor-principal);
-    color: var(--cor-texto-claro);
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-    margin-top: auto;
+/* --- Responsividade para os Cards de Produtos --- */
+@media (max-width: 900px) {
+    .produtos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 colunas em telas menores */
+    }
 }
 
-.card .btn-comprar:hover {
-    background-color: var(--cor-secundaria);
+@media (max-width: 600px) {
+    .produtos-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
+    .produtos h2 {
+        font-size: 2em; /* Reduz título em mobile */
+    }
+}
+
+/* Se você tinha um .btn-comprar, certifique-se que ele não está mais sendo usado nos cards de produtos */
+/* ou remova os estilos dele se ele era específico para esses cards */
+.btn-comprar {
+    display: none; /* Garante que o botão não apareça, se ainda existir alguma referência */
+}
 }
 
 /* --- Estilos da Seção de Contato --- */
