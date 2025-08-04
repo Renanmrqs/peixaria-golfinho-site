@@ -29,7 +29,7 @@ header {
     color: var(--cor-texto-claro);
     padding: 1.2rem 1rem;
     display: flex;
-    flex-direction: column; /* Padrão mobile-first: coluna para telas pequenas */
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -121,90 +121,86 @@ section {
 .produtos {
     padding: 4rem 1rem;
     text-align: center;
-    background-color: var(--cor-fundo-claro); /* Fundo claro para a seção */
+    background-color: var(--cor-fundo-claro);
     color: var(--cor-texto-escuro);
 }
 
 .produtos h2 {
     font-family: var(--fonte-titulos);
-    font-size: 2.8em; /* Aumenta um pouco o título */
+    font-size: 2.8em;
     color: var(--cor-principal);
-    margin-bottom: 3rem; /* Mais espaço abaixo do título */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra sutil no título */
+    margin-bottom: 3rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .produtos-grid {
     display: grid;
-    /* Por padrão, 3 colunas, cada uma ocupando o mesmo espaço disponível */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 2rem; /* Espaçamento entre os cards */
-    max-width: 1200px; /* Limita a largura máxima da grade */
-    margin: 0 auto; /* Centraliza a grade na página */
-    padding: 0 1rem; /* Um pouco de padding nas laterais */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .produto-card {
-    background-color: white; /* Fundo branco para o card */
-    border-radius: 12px; /* Cantos mais arredondados */
-    padding: 1.5rem; /* Espaçamento interno */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave e evidente */
-    display: flex; /* Para centralizar conteúdo verticalmente */
-    flex-direction: column; /* Conteúdo em coluna */
-    align-items: center; /* Centraliza horizontalmente o conteúdo */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
-    overflow: hidden; /* Garante que a imagem com border-radius não "vaze" */
-    text-align: center; /* Centraliza o texto dentro do card */
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
 }
 
 .produto-card:hover {
-    transform: translateY(-8px); /* Levanta o card sutilmente no hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .produto-card img {
-    max-width: 100%; /* Garante que a imagem se ajuste ao card */
-    height: 180px; /* Altura fixa para as imagens */
-    object-fit: cover; /* Recorta a imagem para preencher o espaço sem distorcer */
-    border-radius: 8px; /* Cantos arredondados para a imagem */
-    margin-bottom: 1.2rem; /* Espaço abaixo da imagem */
-    border: 1px solid var(--cor-borda); /* Borda fina na imagem */
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--cor-borda);
 }
 
 .produto-card h3 {
     font-family: var(--fonte-titulos);
-    font-size: 1.8em; /* Tamanho do título do produto */
+    font-size: 1.8em;
     color: var(--cor-principal);
     margin-bottom: 0.8rem;
 }
 
 .produto-card p {
-    font-size: 1.2em; /* Tamanho do preço */
-    color: var(--cor-texto-escuro); /* Cor do preço */
-    font-weight: bold; /* Preço em negrito */
-    margin-bottom: 0; /* Remove margem inferior para apresentação pura */
+    font-size: 1.2em;
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+    margin-bottom: 0;
 }
 
 /* --- Responsividade para os Cards de Produtos --- */
 @media (max-width: 900px) {
     .produtos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 colunas em telas menores */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
 @media (max-width: 600px) {
     .produtos-grid {
-        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+        grid-template-columns: 1fr;
     }
     .produtos h2 {
-        font-size: 2em; /* Reduz título em mobile */
+        font-size: 2em;
     }
 }
 
-/* Se você tinha um .btn-comprar, certifique-se que ele não está mais sendo usado nos cards de produtos */
-/* ou remova os estilos dele se ele era específico para esses cards */
 .btn-comprar {
-    display: none; /* Garante que o botão não apareça, se ainda existir alguma referência */
-}
+    display: none;
 }
 
 /* --- Estilos da Seção de Contato --- */
@@ -241,10 +237,9 @@ section {
     font-size: 50px;
     transition: transform 0.3s ease, filter 0.3s ease;
     text-decoration: none;
-    color: var(--cor-texto-claro); /* Mantém a cor clara/branca */
+    color: var(--cor-texto-claro);
 }
 
-/* As cores específicas para os ícones devem vir depois, ou no próprio HTML */
 .social-icons .fa-facebook-f,
 .social-icons .fa-facebook {
     color: #1877F2;
@@ -449,26 +444,24 @@ footer {
     color: var(--cor-secundaria);
 }
 
----
-
 /* --- Estilos da Seção de Localização (PADRÃO PARA TODAS AS TELAS) --- */
 #localizacao {
     text-align: center; 
     padding: 4rem 1rem; 
     background-color: var(--cor-fundo-claro); 
-    color: var(--cor-texto-claro); 
+    color: var(--cor-texto-escuro); /* CORREÇÃO: Usando cor escura para legibilidade */
 }
 
 #localizacao h2 {
     font-family: var(--fonte-titulos);
     font-size: 2.5em;
-    color: var(--cor-texto-claro); 
+    color: var(--cor-principal); /* CORREÇÃO: Usando a cor principal para destaque */
     margin-bottom: 2rem;
 }
 
-#localizacao iframe {
+#localizacao iframe { /* CORREÇÃO: Aplicando estilos diretamente no iframe */
     width: 100%; 
-    height: 450px; /* Altura padrão para telas maiores */
+    height: 450px;
     border: 2px solid var(--cor-borda); 
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -476,14 +469,11 @@ footer {
     margin: 0 auto; 
 }
 
----
-
-### **Responsividade Aprimorada (Media Queries)**
-
+/* --- Responsividade Aprimorada (Media Queries) --- */
 /* --- Para Telas Maiores que 768px (Desktop/Tablet maior) --- */
 @media (min-width: 768px) {
     header {
-        flex-direction: row; /* Volta para linha em telas maiores */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 1.5rem 2rem;
@@ -502,20 +492,21 @@ footer {
         text-align: right;
     }
 
-    .card {
-        width: calc(33.333% - 2rem); /* 3 cards por linha em telas maiores */
-    }
+    /* O seletor '.card' não está no seu HTML, certifique-se de que ele existe se for necessário */
+    /* .card {
+        width: calc(33.333% - 2rem);
+    } */
 }
 
 /* --- Responsividade para o mapa em telas menores (TABLET E MOBILE) --- */
 @media (max-width: 768px) {
     #localizacao iframe {
-        height: 300px; /* Reduz a altura do mapa em telas de tablet/mobile */
+        height: 300px;
     }
 }
 
 @media (max-width: 480px) {
     #localizacao iframe {
-        height: 200px; /* Reduz ainda mais a altura em telas de mobile pequenas */
+        height: 200px;
     }
 }
